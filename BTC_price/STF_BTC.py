@@ -24,15 +24,16 @@ from API_exchange import getPriceAll
 def getSTF():
     #url = 'https://data.bitcoinity.org/export_data.csv?c=e&currency=USD&data_type=price&t=l&timespan=5y'
     #response = urllib2.urlopen(url)
-    resp = open('./Input/stock-to-flow-ratio.csv', 'r')
-    bit = csv.reader(resp)
+    file_path = r'C:\Users\wenbo\ML_Crypto\Input\stock-to-flow-ratio.csv'
+    with open(file_path, 'r') as resp:
+        bit = csv.reader(resp)
 
-    next(bit)
+        next(bit)
     
-    tHalf = []
-    tArr = []
-    dateArr = []
-    ratio = []
+        tHalf = []
+        tArr = []
+        dateArr = []
+        ratio = []
 
     for line in bit:
         tArr.append(line[0])
@@ -533,6 +534,7 @@ def plotlySTF():
     kraken_fig.update_layout(showlegend=False,font=dict(size=15),autosize=False,width=1000,height=500, margin=dict(l=50,r=50,b=50,t=50,pad=4))
     
     kraken_fig.show()
+    return kraken_fig
                                    
 
     
