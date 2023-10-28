@@ -25,15 +25,15 @@ def getSTF():
     #url = 'https://data.bitcoinity.org/export_data.csv?c=e&currency=USD&data_type=price&t=l&timespan=5y'
     #response = urllib2.urlopen(url)
     file_path = r'C:\Users\wenbo\ML_Crypto\Input\stock-to-flow-ratio.csv'
-    with open(file_path, 'r') as resp:
-        bit = csv.reader(resp)
+    resp = open('./Input/stock-to-flow-ratio.csv', 'r')
+    bit = csv.reader(resp)
 
-        next(bit)
+    next(bit)
     
-        tHalf = []
-        tArr = []
-        dateArr = []
-        ratio = []
+    tHalf = []
+    tArr = []
+    dateArr = []
+    ratio = []
 
     for line in bit:
         tArr.append(line[0])
